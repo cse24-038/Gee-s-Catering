@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Gees Food Catering</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Before Header Section -->
+    <div class="before-header">
+        <h2>Welcome to Gees Food Catering!</h2>
+        <p>Enjoy our delicious and personalized catering services.</p>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Gees Food Catering</div>
+        <nav class="navbar" role="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="blog.html">Blog</a>
+            <a href="order.html">Order</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="content">
+                        <span>Our Special Dish</span>
+                        <h3>Seswaa</h3>
+                        <p>A traditional Botswana dish made with slow-cooked beef, goat, or lamb.</p>
+                        <a href="order.html" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/home-img-1.png" alt="Seswaa dish">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content">
+                        <span>Our Special Dish</span>
+                        <h3>Vetkoek & Mince</h3>
+                        <p>Fluffy fried dough filled with savory minced meat.</p>
+                        <a href="order.html" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/home-img-2.png" alt="Vetkoek & Mince dish">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="content">
+                        <span>Our Special Dish</span>
+                        <h3>Pap & Chakalaka</h3>
+                        <p>Soft maize porridge paired with spicy vegetable relish.</p>
+                        <a href="order.html" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="images/home-img-3.png" alt="Pap & Chakalaka dish">
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">The Field's Mall</a>
+                <a href="#">Riverwalk</a>
+                <a href="#">Gamecity</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="blog.html">Blog</a>
+                <a href="order.html">Order</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#">+267 71506099</a>
+                <a href="#">info@geescatering.com</a>
+                <a href="#">Location: Gaborone, Botswana</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="credit">© 2025 by <span>Gee</span></div>
+    </section>
+
+    <!-- Loader -->
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="Loading animation">
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Hide loader when page loads
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector(".loader-container").style.display = "none";
+            }, 3000);
+        });
+
+        // Swiper Initialization with Fixes
+        var swiper = new Swiper(".home-slider", {
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            slidesPerView: 1,
+            spaceBetween: 10,
+        });
+
+        document.querySelector("#menu-bars").addEventListener("click", function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+    if (!sessionStorage.getItem("visited")) {
+        setTimeout(function() {
+            document.querySelector(".loader-container").style.display = "none";
+            sessionStorage.setItem("visited", "true");
+        }, 3000); // Loader only shows once per session
+    } else {
+        document.querySelector(".loader-container").style.display = "none";
+    }
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Gees Food Catering</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Gees Food Catering</div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="order.html">Order</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <h3 class="sub-heading"> Blog </h3>
+        <h1 class="heading"> What We Offer </h1>
+        <section class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="foodvid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <h1>Experience Our Catering Services</h1>
+            <p>Delicious meals tailored to every occasion.</p>
+        </div>
+    </section>
+
+        <div class="swiper-container review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="images/wedding.jpg" alt="">
+                            <div class="user-info">
+                                <h3>Wedding Catering</h3>
+                            </div>
+                        </div>
+                        <p>Elegant menus, flawless service, and unforgettable memories for your special day.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="images/corporate event.jpg" alt="">
+                            <div class="user-info">
+                                <h3>Corporate Events</h3>
+                            </div>
+                        </div>
+                        <p>Professional catering for meetings, launches, and company gatherings.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="images/private party.jpg" alt="">
+                            <div class="user-info">
+                                <h3>Private Parties</h3>
+                            </div>
+                        </div>
+                        <p>From birthdays to anniversaries, we tailor food for every celebration.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="images/funeral.jpg" alt="">
+                            <div class="user-info">
+                                <h3>Funeral Catering</h3>
+                            </div>
+                        </div>
+                        <p>Compassionate and respectful service for memorials and gatherings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Move Pagination Below -->
+        <div class="swiper-pagination"></div>
+
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">The Field's Mall</a>
+                <a href="#">Riverwalk</a>
+                <a href="#">Gamecity</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="blog.html">Review</a>
+                <a href="order.html">Order</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#">+267 71506099</a>
+                <a href="#">info@geescatering.com</a>
+                <a href="#">Location: Gaborone, Botswana</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="credit">© 2025 by <span>Gee</span></div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Swiper Initialization
+        var swiper = new Swiper(".review-slider", {
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        document.querySelector("#menu-bars").addEventListener("click", function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>

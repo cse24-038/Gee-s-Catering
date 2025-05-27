@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Order - Gees Food Catering</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="before-header">
+        <h2>Welcome to Gees Food Catering!</h2>
+        <p>Enjoy our delicious and personalized catering services.</p>
+    </div>
+
+    <header>
+        <div class="logo">Gees Food Catering</div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="blog.html">Blog</a>
+            <a href="order.html" class="active">Order</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
+    </header>
+
+    <section class="order" id="order">
+        <h3 class="sub-heading">Order Now</h3>
+        <h1 class="heading">Free and Fast within Botswana</h1>
+
+        <form id="order-form" action="https://formspree.io/f/xvgaeogo" method="POST">
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Name</span>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input">
+                    <span>Your Number</span>
+                    <input type="text" name="number" id="number" placeholder="Enter your number" required pattern="[0-9]+" title="Only numbers allowed">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Order</span>
+                    <input type="text" name="order" id="order" placeholder="Enter details" required>
+                </div>
+                <div class="input">
+                    <span>Additional Food</span>
+                    <input type="text" name="additional" id="additional" placeholder="Extra Catering e.g. Drinks">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>How Much</span>
+                    <input type="number" name="quantity" id="quantity" placeholder="How many orders" required>
+                </div>
+                <div class="input">
+                    <span>Date and Time</span>
+                    <input type="datetime-local" name="datetime" id="datetime" required>
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your Address</span>
+                    <textarea name="address" id="address" placeholder="Enter your address" required></textarea>
+                </div>
+                <div class="input">
+                    <span>Your Message</span>
+                    <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+                </div>
+            </div>
+
+            <input type="submit" value="Order Now" class="btn">
+        </form>
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">The Field's Mall</a>
+                <a href="#">Riverwalk</a>
+                <a href="#">Gamecity</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="blog.html">Review</a>
+                <a href="order.html">Order</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#">+267 71506099</a>
+                <a href="#">info@geescatering.com</a>
+                <a href="#">Location: Gaborone, Botswana</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="credit">© 2025 by <span>Gee</span></div>
+    </section>
+
+    <script>
+        document.querySelector("#menu-bars").addEventListener("click", function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        });
+
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            let name = document.getElementById("name").value.trim();
+            let number = document.getElementById("number").value.trim();
+            let order = document.getElementById("order").value.trim();
+            let quantity = document.getElementById("quantity").value;
+            let datetime = document.getElementById("datetime").value;
+            let address = document.getElementById("address").value.trim();
+
+            if (!name || !number || !order || !quantity || !datetime || !address) {
+                alert("Please fill in all required fields.");
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
